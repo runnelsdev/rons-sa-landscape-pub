@@ -5,6 +5,7 @@ import {
   CONTACT,
   SERVICES,
   STATS,
+  SEGMENTS,
   HERO_IMAGE,
   SERVICE_IMAGES,
   ABOUT_IMAGE,
@@ -162,6 +163,32 @@ export default function HomePage() {
                     </div>
                   </div>
                 </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Who we serve ===== */}
+      <section className="bg-[#1f3219] text-bone">
+        <div className="mx-auto max-w-7xl px-5 lg:px-10 py-20">
+          <Reveal>
+            <div className="text-[12px] font-semibold uppercase tracking-[0.22em] text-bone/45 mb-4">
+              Who we serve
+            </div>
+            <h2 className="display text-[34px] sm:text-[46px] leading-[1.05] max-w-2xl">
+              From a single yard to the whole property.
+            </h2>
+          </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-10 mt-14">
+            {SEGMENTS.map((s, i) => (
+              <Reveal key={s.name} delay={(i % 4) * 90}>
+                <div className="border-t border-bone/15 pt-5">
+                  <h3 className="display text-[24px] leading-tight">{s.name}</h3>
+                  <p className="text-[14px] text-bone/65 mt-2 leading-relaxed">
+                    {s.blurb}
+                  </p>
+                </div>
               </Reveal>
             ))}
           </div>

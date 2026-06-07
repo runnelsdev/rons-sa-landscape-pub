@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/marketing/Reveal";
-import { GALLERY, SERVICE_AREA, CONTACT } from "@/lib/site";
+import WorkGallery from "@/components/marketing/WorkGallery";
+import { SERVICE_AREA, CONTACT } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Work — Ron's S A Landscape | San Antonio Project Gallery",
@@ -28,60 +28,9 @@ export default function WorkPage() {
         </Reveal>
       </section>
 
-      {/* Gallery */}
+      {/* Gallery (filter by property type) */}
       <section className="mx-auto max-w-7xl px-5 lg:px-10 pb-8">
-        {/* Asymmetric mosaic — spans chosen so it tiles with no gaps at both
-            2-col (mobile) and 4-col (desktop). Image fills each cell so all
-            four corners clip cleanly. */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 auto-rows-[168px] lg:auto-rows-[240px] gap-4">
-          {GALLERY.map((g, i) => {
-            const span =
-              i === 0
-                ? "col-span-2 row-span-2"
-                : i === 5
-                ? "col-span-2"
-                : "";
-            const featured = i === 0;
-            return (
-              <Reveal
-                key={g.title}
-                delay={(i % 4) * 80}
-                className={`${span} h-full`}
-              >
-                <figure className="group relative h-full w-full rounded-2xl overflow-hidden">
-                  <Image
-                    src={g.image}
-                    alt={g.title}
-                    fill
-                    sizes={
-                      featured
-                        ? "(max-width: 640px) 100vw, 50vw"
-                        : "(max-width: 640px) 50vw, 25vw"
-                    }
-                    className="object-cover img-zoom"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
-                  <figcaption className="absolute bottom-0 left-0 right-0 p-5 lg:p-6">
-                    <div className="text-[11px] uppercase tracking-[0.18em] text-bone/75">
-                      {g.category} · {g.area}
-                    </div>
-                    <div
-                      className={`display text-bone leading-tight mt-1.5 ${
-                        featured ? "text-[26px] lg:text-[32px]" : "text-[19px]"
-                      }`}
-                    >
-                      {g.title}
-                    </div>
-                    <p className="text-[13px] text-bone/0 group-hover:text-bone/85 max-h-0 group-hover:max-h-24 overflow-hidden transition-all duration-500 mt-0 group-hover:mt-2">
-                      {g.blurb}
-                    </p>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            );
-          })}
-        </div>
-
+        <WorkGallery />
         <p className="text-[13px] text-slate mt-10 text-center">
           Project photography is representative — real Ron&rsquo;s S A Landscape
           jobs across {SERVICE_AREA.slice(0, 4).join(", ")} &amp; more coming soon.

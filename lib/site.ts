@@ -154,59 +154,69 @@ export type GalleryItem = {
   image: string;
 };
 
+// Who we serve — the property segments Ron works with. Drives the Work
+// gallery filter and the "Who we serve" section.
+export const SEGMENTS: { name: string; blurb: string }[] = [
+  { name: "Residential", blurb: "Homes kept sharp — from the weekly mow to a full yard redesign." },
+  { name: "Commercial", blurb: "Storefronts and offices that stay presentable year-round." },
+  { name: "HOA", blurb: "Reliable common-area grounds care your board can count on." },
+  { name: "Multi-family", blurb: "Apartment and condo grounds that lease themselves." },
+];
+
+// GalleryItem.category is the property segment (one of SEGMENTS above).
 export const GALLERY: GalleryItem[] = [
   {
     title: "Front-yard reset & sod",
-    category: "Installation",
+    category: "Residential",
     area: "Alamo Heights",
     blurb: "Tired turf out, fresh sod and crisp steel edging in.",
     image: "/images/hero.jpg",
   },
   {
     title: "Flagstone patio & seat wall",
-    category: "Hardscape",
+    category: "Residential",
     area: "Stone Oak",
     blurb: "A shaded gathering space built to last in Hill Country soil.",
     image: "/images/patio.jpg",
   },
   {
-    title: "Weekly maintenance route",
-    category: "Maintenance",
+    title: "Common-area grounds care",
+    category: "HOA",
     area: "Helotes",
-    blurb: "Same crew, same day — sharp lines every single visit.",
+    blurb: "Same crew, same day — sharp lines across the community.",
     image: "/images/lawn-stripes.jpg",
   },
   {
-    title: "Irrigation tune-up & green-up",
-    category: "Irrigation",
+    title: "Property irrigation tune-up",
+    category: "Commercial",
     area: "Boerne",
     blurb: "Water-wise zones that keep it green without the waste.",
     image: "/images/lawn-green.jpg",
   },
   {
-    title: "Overgrown lot cleanup",
-    category: "Cleanups",
+    title: "Site cleanup & reset",
+    category: "Commercial",
     area: "Schertz",
-    blurb: "Neglected to neat in a single push — then on a plan.",
+    blurb: "Neglected to presentable in a single push — then on a plan.",
     image: "/images/backyard.jpg",
   },
   {
-    title: "Native bed & mulch refresh",
-    category: "Mulch & Rock",
+    title: "Courtyard bed & mulch refresh",
+    category: "Multi-family",
     area: "New Braunfels",
     blurb: "Texas-native plantings with clean, defined beds.",
     image: "/images/beds-rock.jpg",
   },
   {
-    title: "Landscape build & retaining wall",
-    category: "Installation",
+    title: "Entrance landscape & retaining wall",
+    category: "HOA",
     area: "San Antonio",
     blurb: "Grading, stone, and plantings that hold the slope.",
     image: "/images/garden-golden.jpg",
   },
   {
-    title: "Stone path & border design",
-    category: "Hardscape",
+    title: "Walkway & border design",
+    category: "Multi-family",
     area: "Stone Oak",
     blurb: "Defined lines that frame the whole property.",
     image: "/images/patio-aerial.jpg",
