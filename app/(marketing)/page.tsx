@@ -16,22 +16,17 @@ const WHY = [
   {
     k: "01",
     title: "Same crew, every visit",
-    body: "You get to know your crew and they get to know your property — no rotating strangers, no re-explaining.",
+    body: "The crew that knows your property is the one that shows up.",
   },
   {
     k: "02",
     title: "Show up you can set a clock by",
-    body: "Routes are planned and run six days a week. When we say a day, we mean that day.",
+    body: "Planned routes, six days a week. A scheduled day is a promise.",
   },
   {
     k: "03",
     title: "Built for South Texas",
-    body: "Drought-tolerant plantings, water-wise irrigation, and turf care tuned to the Hill Country climate.",
-  },
-  {
-    k: "04",
-    title: "One call for the whole yard",
-    body: "Maintenance, installs, hardscape, irrigation, cleanups — handled by one team you actually trust.",
+    body: "Drought-tolerant plantings and water-wise irrigation, tuned to the Hill Country.",
   },
 ];
 
@@ -58,9 +53,8 @@ export default function HomePage() {
               A landscape worth coming home to.
             </h1>
             <p className="text-bone/85 text-[17px] lg:text-[19px] leading-relaxed mt-6 max-w-xl">
-              Full-service lawn care, landscape design, and hardscape for San
-              Antonio homes — kept impeccable by a crew that treats your property
-              like its own.
+              Full-service lawn care, landscape, and hardscape across San Antonio
+              — one dependable crew for the whole property.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link href="/contact" className="lux-btn-light">
@@ -86,10 +80,9 @@ export default function HomePage() {
           </Reveal>
           <Reveal className="lg:col-span-5" delay={120}>
             <p className="text-[17px] text-ink/70 leading-relaxed">
-              Ron&rsquo;s S A Landscape is a family-run San Antonio crew handling
-              the whole property — the weekly mow, the fresh install, the patio,
-              the irrigation. One dependable team, one standard, and a yard you
-              never have to think about.
+              A San Antonio crew handling the whole property — mowing, installs,
+              hardscape, and irrigation. One team, one standard, a yard you never
+              have to think about.
             </p>
             <div className="mt-8 flex gap-3">
               <Link href="/services" className="lux-btn">

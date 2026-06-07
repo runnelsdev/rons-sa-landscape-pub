@@ -43,7 +43,7 @@ export const SERVICES: Service[] = [
     name: "Lawn & Turf Maintenance",
     tagline: "Recurring mow, edge & blow",
     blurb:
-      "Scheduled crews keep your property sharp week in, week out — mowing, edging, line-trimming, and cleanup on a route you can count on.",
+      "Mow, edge, trim, and blow on a schedule you can count on.",
     bullets: [
       "Weekly, biweekly & monthly plans",
       "Edging, trimming & blow-down every visit",
@@ -57,7 +57,7 @@ export const SERVICES: Service[] = [
     name: "Landscape Installation",
     tagline: "Beds, sod & design-build",
     blurb:
-      "From a fresh sod lawn to a full front-yard redesign — native-friendly plantings built for the South Texas climate and your water bill.",
+      "Fresh sod, plant beds, and full redesigns built for the South Texas climate.",
     bullets: [
       "Sod, plant beds & tree planting",
       "Drought-tolerant, Texas-native palettes",
@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
     name: "Hardscape",
     tagline: "Patios, walls & stone",
     blurb:
-      "Flagstone patios, retaining walls, walkways, and decorative rock that hold up to Hill Country soil and stand out from the curb.",
+      "Patios, retaining walls, walkways, and stone that stand out from the curb.",
     bullets: [
       "Flagstone & paver patios",
       "Retaining & seat walls",
@@ -85,7 +85,7 @@ export const SERVICES: Service[] = [
     name: "Irrigation",
     tagline: "Install, repair & tune-ups",
     blurb:
-      "Efficient sprinkler systems and fast repairs — dialed in to SAWS watering rules so your landscape thrives without the waste.",
+      "Efficient sprinkler installs and fast repairs — green without the waste.",
     bullets: [
       "New system installs",
       "Leak & head repairs",
@@ -99,7 +99,7 @@ export const SERVICES: Service[] = [
     name: "Seasonal Cleanups",
     tagline: "First-time & storm cleanups",
     blurb:
-      "Overgrown, neglected, or storm-hit? We get a property back to baseline fast — then keep it there with a maintenance plan.",
+      "Overgrown or storm-hit? We get it back to baseline fast — then keep it there.",
     bullets: [
       "First-time / overgrown cleanups",
       "Leaf & debris haul-off",
@@ -113,7 +113,7 @@ export const SERVICES: Service[] = [
     name: "Mulch & Rock",
     tagline: "Material delivery & install",
     blurb:
-      "Fresh mulch and decorative rock delivered and installed by the yard — clean lines, healthy beds, and less weeding all season.",
+      "Fresh mulch and decorative rock, delivered and installed by the yard.",
     bullets: [
       "Hardwood & cedar mulch",
       "Decorative & river rock",
