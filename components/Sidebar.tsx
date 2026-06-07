@@ -4,14 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/", label: "Yard Office", icon: "◆" },
-  { href: "/clients", label: "Clients", icon: "◌" },
-  { href: "/work-orders", label: "Work Orders", icon: "◳" },
-  { href: "/contracts", label: "Contracts", icon: "≡" },
-  { href: "/estimator", label: "Estimator", icon: "$" },
-  { href: "/routes", label: "Routes", icon: "→" },
-  { href: "/equipment", label: "Equipment", icon: "▲" },
-  { href: "/crew", label: "Crew", icon: "✦" },
+  { href: "/dashboard", label: "Yard Office", icon: "◆" },
+  { href: "/dashboard/clients", label: "Clients", icon: "◌" },
+  { href: "/dashboard/work-orders", label: "Work Orders", icon: "◳" },
+  { href: "/dashboard/contracts", label: "Contracts", icon: "≡" },
+  { href: "/dashboard/estimator", label: "Estimator", icon: "$" },
+  { href: "/dashboard/routes", label: "Routes", icon: "→" },
+  { href: "/dashboard/equipment", label: "Equipment", icon: "▲" },
+  { href: "/dashboard/crew", label: "Crew", icon: "✦" },
 ];
 
 export default function Sidebar() {
@@ -19,8 +19,11 @@ export default function Sidebar() {
 
   return (
     <aside className="w-[260px] shrink-0 border-r-[1.5px] border-ink bg-cream/50 flex flex-col">
-      {/* Brand mark */}
-      <div className="px-5 py-6 border-b-[1.5px] border-ink">
+      {/* Brand mark — links back to the public site */}
+      <Link
+        href="/"
+        className="block px-5 py-6 border-b-[1.5px] border-ink hover:bg-cream/40 transition-colors"
+      >
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-moss border-[1.5px] border-ink flex items-center justify-center text-bone font-display text-xl shadow-stamp-sm">
             R
@@ -32,7 +35,7 @@ export default function Sidebar() {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
 
       <div className="ticker-stripe" />
 
@@ -41,8 +44,8 @@ export default function Sidebar() {
         <div className="label px-2 mb-2">Operations</div>
         {navItems.map((item) => {
           const isActive =
-            item.href === "/"
-              ? pathname === "/"
+            item.href === "/dashboard"
+              ? pathname === "/dashboard"
               : pathname.startsWith(item.href);
           return (
             <Link
