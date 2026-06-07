@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { CONTACT, SERVICES } from "@/lib/site";
 
+const inputCls =
+  "w-full px-4 py-3 rounded-xl bg-white border border-ink/15 text-[15px] text-ink placeholder:text-ink/35 transition-colors focus:outline-none focus:border-moss focus:ring-2 focus:ring-moss/15";
+
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
@@ -32,45 +35,50 @@ export default function QuoteForm() {
 
   if (submitted) {
     return (
-      <div className="panel-stamp p-8 bg-moss/5 border-l-[6px] border-moss">
-        <div className="label text-moss">Request received</div>
-        <h3 className="display text-[26px] leading-tight mt-2">
+      <div className="rounded-2xl bg-white border border-ink/10 p-8 shadow-[0_36px_70px_-44px_rgba(26,26,23,0.5)]">
+        <div className="w-12 h-12 rounded-full bg-moss/10 text-moss flex items-center justify-center text-xl">
+          ✓
+        </div>
+        <h3 className="display text-[28px] leading-tight mt-5">
           Thanks, {form.name || "neighbor"}.
         </h3>
-        <p className="text-[15px] text-slate mt-3 leading-relaxed">
+        <p className="text-[15px] text-ink/65 mt-3 leading-relaxed">
           We&rsquo;ll reach out to set up your free estimate — usually within one
           business day. Need us sooner? Call{" "}
-          <a href={CONTACT.phoneHref} className="font-semibold hover:text-moss">
+          <a href={CONTACT.phoneHref} className="font-semibold text-moss">
             {CONTACT.phone}
           </a>
           .
         </p>
-        <div className="mt-6 flex flex-wrap gap-4">
-          <a href={mailtoHref} className="btn btn-clay">
+        <div className="mt-7 flex flex-wrap gap-3">
+          <a href={mailtoHref} className="lux-btn">
             Send as Email
           </a>
           <button
             type="button"
             onClick={() => setSubmitted(false)}
-            className="btn btn-secondary"
+            className="lux-btn-outline"
           >
             Edit Request
           </button>
         </div>
-        <p className="mono text-[10px] text-slate mt-5">
-          Demo form — submissions aren&rsquo;t stored. &ldquo;Send as Email&rdquo;
-          opens your mail app with the details filled in.
+        <p className="text-[11px] text-slate mt-6">
+          Demo form — submissions aren&rsquo;t stored yet. &ldquo;Send as
+          Email&rdquo; opens your mail app with the details filled in.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="panel-stamp p-7 space-y-5">
+    <form
+      onSubmit={handleSubmit}
+      className="rounded-2xl bg-white border border-ink/10 p-7 lg:p-8 shadow-[0_36px_70px_-44px_rgba(26,26,23,0.5)] space-y-5"
+    >
       <div className="grid sm:grid-cols-2 gap-5">
         <Field label="Name" required>
           <input
-            className="field-input"
+            className={inputCls}
             required
             value={form.name}
             onChange={update("name")}
@@ -79,7 +87,7 @@ export default function QuoteForm() {
         </Field>
         <Field label="Phone" required>
           <input
-            className="field-input"
+            className={inputCls}
             required
             type="tel"
             value={form.phone}
@@ -92,7 +100,7 @@ export default function QuoteForm() {
       <div className="grid sm:grid-cols-2 gap-5">
         <Field label="Email">
           <input
-            className="field-input"
+            className={inputCls}
             type="email"
             value={form.email}
             onChange={update("email")}
@@ -101,7 +109,7 @@ export default function QuoteForm() {
         </Field>
         <Field label="Neighborhood / area">
           <input
-            className="field-input"
+            className={inputCls}
             value={form.area}
             onChange={update("area")}
             placeholder="Stone Oak"
@@ -110,7 +118,7 @@ export default function QuoteForm() {
       </div>
 
       <Field label="What do you need?">
-        <select className="field-input" value={form.service} onChange={update("service")}>
+        <select className={inputCls} value={form.service} onChange={update("service")}>
           {SERVICES.map((s) => (
             <option key={s.slug} value={s.name}>
               {s.name}
@@ -122,17 +130,17 @@ export default function QuoteForm() {
 
       <Field label="Tell us about the property">
         <textarea
-          className="field-input min-h-[120px] resize-y"
+          className={`${inputCls} min-h-[120px] resize-y`}
           value={form.message}
           onChange={update("message")}
           placeholder="Lot size, what it looks like now, any specifics…"
         />
       </Field>
 
-      <button type="submit" className="btn btn-clay w-full justify-center py-3">
+      <button type="submit" className="lux-btn w-full py-3.5">
         Request My Free Quote
       </button>
-      <p className="mono text-[10px] text-slate text-center">
+      <p className="text-[11px] text-slate text-center">
         No spam, no obligation. We&rsquo;ll only use this to get back to you.
       </p>
     </form>
@@ -150,7 +158,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="label block mb-2">
+      <span className="block mb-2 text-[13px] font-semibold text-ink/75">
         {label}
         {required && <span className="text-clay"> *</span>}
       </span>

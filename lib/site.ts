@@ -131,3 +131,84 @@ export const STATS = [
   { value: "Full-service", label: "Lawn → hardscape" },
   { value: "6-day", label: "Weekly service" },
 ];
+
+// ---- Imagery (placeholder stock in /public/images — swap for Ron's real photos) ----
+export const HERO_IMAGE = "/images/hero.jpg";
+export const ABOUT_IMAGE = "/images/patio.jpg";
+export const DETAIL_IMAGE = "/images/detail-lantern.jpg";
+
+export const SERVICE_IMAGES: Record<string, string> = {
+  maintenance: "/images/lawn-stripes.jpg",
+  installation: "/images/garden-golden.jpg",
+  hardscape: "/images/patio.jpg",
+  irrigation: "/images/lawn-green.jpg",
+  cleanups: "/images/backyard.jpg",
+  "mulch-rock": "/images/beds-rock.jpg",
+};
+
+export type GalleryItem = {
+  title: string;
+  category: string;
+  area: string;
+  blurb: string;
+  image: string;
+};
+
+export const GALLERY: GalleryItem[] = [
+  {
+    title: "Front-yard reset & sod",
+    category: "Installation",
+    area: "Alamo Heights",
+    blurb: "Tired turf out, fresh sod and crisp steel edging in.",
+    image: "/images/hero.jpg",
+  },
+  {
+    title: "Flagstone patio & seat wall",
+    category: "Hardscape",
+    area: "Stone Oak",
+    blurb: "A shaded gathering space built to last in Hill Country soil.",
+    image: "/images/patio.jpg",
+  },
+  {
+    title: "Weekly maintenance route",
+    category: "Maintenance",
+    area: "Helotes",
+    blurb: "Same crew, same day — sharp lines every single visit.",
+    image: "/images/lawn-stripes.jpg",
+  },
+  {
+    title: "Irrigation tune-up & green-up",
+    category: "Irrigation",
+    area: "Boerne",
+    blurb: "Water-wise zones that keep it green without the waste.",
+    image: "/images/lawn-green.jpg",
+  },
+  {
+    title: "Overgrown lot cleanup",
+    category: "Cleanups",
+    area: "Schertz",
+    blurb: "Neglected to neat in a single push — then on a plan.",
+    image: "/images/backyard.jpg",
+  },
+  {
+    title: "Native bed & mulch refresh",
+    category: "Mulch & Rock",
+    area: "New Braunfels",
+    blurb: "Texas-native plantings with clean, defined beds.",
+    image: "/images/beds-rock.jpg",
+  },
+  {
+    title: "Landscape build & retaining wall",
+    category: "Installation",
+    area: "San Antonio",
+    blurb: "Grading, stone, and plantings that hold the slope.",
+    image: "/images/garden-golden.jpg",
+  },
+  {
+    title: "Stone path & border design",
+    category: "Hardscape",
+    area: "Stone Oak",
+    blurb: "Defined lines that frame the whole property.",
+    image: "/images/patio-aerial.jpg",
+  },
+];

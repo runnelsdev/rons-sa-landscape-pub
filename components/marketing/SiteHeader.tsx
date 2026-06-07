@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { COMPANY, CONTACT } from "@/lib/site";
 
 const navItems = [
@@ -15,104 +15,113 @@ const navItems = [
 export default function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50">
-      <div className="bg-bone/95 backdrop-blur border-b-[1.5px] border-ink">
-        <div className="mx-auto max-w-6xl px-5 lg:px-8">
-          <div className="flex items-center justify-between h-[68px] gap-4">
-            {/* Brand */}
-            <Link href="/" className="flex items-center gap-3 shrink-0">
-              <span className="w-10 h-10 bg-moss border-[1.5px] border-ink flex items-center justify-center text-bone font-display text-xl shadow-stamp-sm">
-                R
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#FBFAF7]/90 backdrop-blur-md border-b border-ink/10 shadow-[0_10px_40px_-28px_rgba(26,26,23,0.7)]"
+          : "bg-[#FBFAF7]/60 backdrop-blur-sm border-b border-transparent"
+      }`}
+    >
+      <div className="mx-auto max-w-7xl px-5 lg:px-10">
+        <div className="flex items-center justify-between h-[76px] gap-4">
+          {/* Brand */}
+          <Link href="/" className="flex items-center gap-3 shrink-0 group">
+            <span className="w-9 h-9 rounded-md bg-moss text-bone flex items-center justify-center display text-lg">
+              R
+            </span>
+            <span className="leading-none">
+              <span className="display text-[20px] tracking-tight block">
+                {COMPANY.name}
               </span>
-              <span>
-                <span className="display text-[19px] leading-none block">
-                  {COMPANY.name}
-                </span>
-                <span className="mono text-[9px] tracking-[0.18em] text-slate uppercase block mt-1">
-                  San Antonio, TX
-                </span>
+              <span className="lux-eyebrow text-[9px] block mt-1 text-slate">
+                San Antonio, TX
               </span>
-            </Link>
+            </span>
+          </Link>
 
-            {/* Desktop nav */}
-            <nav className="hidden md:flex items-center gap-1">
-              {navItems.map((item) => {
-                const active = pathname === item.href;
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`px-3 py-2 mono text-[12px] font-semibold uppercase tracking-[0.06em] border-[1.5px] rounded-[3px] transition-colors ${
-                      active
-                        ? "border-ink bg-cream"
-                        : "border-transparent hover:border-ink hover:bg-cream/60"
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-9">
+            {navItems.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`relative text-[15px] font-medium transition-colors hover:text-moss ${
+                    active ? "text-moss" : "text-ink/80"
+                  }`}
+                >
+                  {item.label}
+                  <span
+                    className={`absolute -bottom-1.5 left-0 h-px bg-moss transition-all duration-300 ${
+                      active ? "w-full" : "w-0"
                     }`}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </nav>
+                  />
+                </Link>
+              );
+            })}
+          </nav>
 
-            {/* Actions */}
-            <div className="hidden md:flex items-center gap-4 shrink-0">
-              <a
-                href={CONTACT.phoneHref}
-                className="mono text-[13px] font-semibold hover:text-moss"
-              >
-                {CONTACT.phone}
-              </a>
-              <Link href="/contact" className="btn btn-clay">
-                Get a Quote
-              </Link>
-            </div>
-
-            {/* Mobile toggle */}
-            <button
-              type="button"
-              aria-label="Toggle menu"
-              aria-expanded={open}
-              onClick={() => setOpen((v) => !v)}
-              className="md:hidden w-10 h-10 border-[1.5px] border-ink rounded-[3px] bg-cream flex items-center justify-center mono text-lg shadow-stamp-sm"
+          {/* Actions */}
+          <div className="hidden md:flex items-center gap-5 shrink-0">
+            <a
+              href={CONTACT.phoneHref}
+              className="text-[15px] font-semibold hover:text-moss transition-colors"
             >
-              {open ? "✕" : "≡"}
-            </button>
+              {CONTACT.phone}
+            </a>
+            <Link href="/contact" className="lux-btn">
+              Get a Quote
+            </Link>
           </div>
+
+          {/* Mobile toggle */}
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="md:hidden w-10 h-10 rounded-md border border-ink/20 flex items-center justify-center text-xl"
+          >
+            {open ? "✕" : "≡"}
+          </button>
         </div>
       </div>
-      <div className="ticker-stripe" />
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-bone border-b-[1.5px] border-ink">
-          <nav className="mx-auto max-w-6xl px-5 py-4 flex flex-col gap-1">
+        <div className="md:hidden bg-[#FBFAF7] border-b border-ink/10">
+          <nav className="mx-auto max-w-7xl px-5 py-5 flex flex-col gap-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`px-3 py-3 mono text-[13px] font-semibold uppercase tracking-[0.06em] border-[1.5px] rounded-[3px] ${
-                  pathname === item.href
-                    ? "border-ink bg-cream"
-                    : "border-transparent"
+                className={`py-3 text-[16px] font-medium border-b border-ink/5 ${
+                  pathname === item.href ? "text-moss" : "text-ink"
                 }`}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="flex items-center justify-between gap-3 mt-3 pt-3 border-t border-dashed border-ink/30">
-              <a
-                href={CONTACT.phoneHref}
-                className="mono text-[14px] font-semibold"
-              >
+            <div className="flex items-center justify-between gap-3 mt-4">
+              <a href={CONTACT.phoneHref} className="text-[16px] font-semibold">
                 {CONTACT.phone}
               </a>
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="btn btn-clay"
+                className="lux-btn"
               >
                 Get a Quote
               </Link>
