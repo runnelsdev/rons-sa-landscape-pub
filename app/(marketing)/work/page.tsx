@@ -3,9 +3,9 @@ import Link from "next/link";
 import { SERVICE_AREA } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Our Work — Ron's Landscape | San Antonio Project Gallery",
+  title: "Our Work — Ron's S A Landscape | San Antonio Project Gallery",
   description:
-    "A look at recent Ron's Landscape projects across San Antonio — lawn transformations, installs, hardscape, and irrigation.",
+    "A look at recent Ron's S A Landscape projects across San Antonio — lawn transformations, installs, hardscape, and irrigation.",
 };
 
 type Project = {
@@ -108,7 +108,7 @@ export default function WorkPage() {
                   {p.category}
                 </span>
                 <span className="absolute bottom-3 right-3 mono text-[10px] uppercase tracking-[0.18em] text-bone/80">
-                  Ron&rsquo;s Landscape
+                  Ron&rsquo;s S A Landscape
                 </span>
               </div>
               <div className="p-5">

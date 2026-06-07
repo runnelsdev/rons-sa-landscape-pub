@@ -3,9 +3,9 @@ import Link from "next/link";
 import { COMPANY, STATS, SERVICE_AREA, CONTACT } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About — Ron's Landscape | Family-Run San Antonio Landscaping",
+  title: "About — Ron's S A Landscape | San Antonio Landscaping",
   description:
-    "Ron's Landscape is a family-run San Antonio landscaping crew, on the route since 2012. Here's how we work and what we stand for.",
+    "Ron's S A Landscape LLC is a local San Antonio landscaping company. Here's how we work and what we stand for.",
 };
 
 const values = [
@@ -45,34 +45,35 @@ export default function AboutPage() {
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7 space-y-5 text-[16px] leading-relaxed text-ink/90">
             <p>
-              {COMPANY.name} started in {COMPANY.foundedYear} with one truck, one
-              trailer, and a short list of San Antonio neighbors who wanted their
-              lawns handled right. We never chased being the biggest — just the
-              one crew people actually trust to show up and do it well.
+              {COMPANY.legalName} is a local landscaping company serving San
+              Antonio and the surrounding Hill Country. We keep it simple: one
+              dependable crew that shows up, does the work right, and treats your
+              property like it matters.
             </p>
             <p>
-              These days we run maintenance routes six days a week and take on
-              installs, hardscape, irrigation, and cleanups across the metro. The
-              work grew; the standard didn&rsquo;t move. Same crews, same care,
-              same phone number.
+              From recurring lawn maintenance to installs, hardscape, irrigation,
+              and cleanups, we handle the whole yard — so you&rsquo;re not juggling
+              three different companies to keep one property looking good.
             </p>
             <p>
               We&rsquo;re built for South Texas specifically — drought-tolerant
-              plantings, SAWS-smart irrigation, and turf practices that hold up to
-              a Hill Country summer. It&rsquo;s the difference between a yard
+              plantings, water-wise irrigation, and turf care that holds up to a
+              Hill Country summer. It&rsquo;s the difference between a yard
               that&rsquo;s mowed and a yard that&rsquo;s cared for.
             </p>
           </div>
 
-          {/* Field note */}
+          {/* How we work */}
           <div className="lg:col-span-5">
             <div className="panel-stamp p-7 bg-moss/5 border-l-[6px] border-moss">
-              <div className="label text-moss">Painted on the shop wall</div>
+              <div className="label text-moss">How we work</div>
               <p className="display text-[24px] leading-snug mt-3">
-                &ldquo;Pay attention to the small things and the big things take
-                care of themselves.&rdquo;
+                Show up when we say, do the small things right, and leave the
+                property better than we found it.
               </p>
-              <div className="mono text-[11px] text-slate mt-3">— Ron</div>
+              <div className="mono text-[11px] text-slate mt-3">
+                — The {COMPANY.name} standard
+              </div>
             </div>
           </div>
         </div>

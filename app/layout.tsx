@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ron's Landscape — Landscaping & Lawn Care in San Antonio, TX",
+  title: "Ron's S A Landscape — Landscaping & Lawn Care in San Antonio, TX",
   description:
-    "Family-run San Antonio landscaping crew. Recurring lawn maintenance, landscape installs, hardscape, irrigation, and seasonal cleanups — done right, on schedule.",
+    "Ron's S A Landscape LLC — San Antonio landscaping & lawn care. Recurring maintenance, landscape installs, hardscape, irrigation, and seasonal cleanups. Call (210) 668-4924.",
 };
 
 export default function RootLayout({

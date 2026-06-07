@@ -3,9 +3,9 @@ import QuoteForm from "@/components/marketing/QuoteForm";
 import { CONTACT, SERVICE_AREA } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact — Ron's Landscape | Free San Antonio Landscaping Quote",
+  title: "Contact — Ron's S A Landscape | Free San Antonio Landscaping Quote",
   description:
-    "Request a free landscaping or lawn-care quote from Ron's Landscape, serving San Antonio and the surrounding Hill Country.",
+    "Request a free landscaping or lawn-care quote from Ron's S A Landscape, serving San Antonio and the surrounding Hill Country. Call (210) 668-4924.",
 };
 
 export default function ContactPage() {

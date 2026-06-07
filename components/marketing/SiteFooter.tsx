@@ -19,8 +19,7 @@ export default function SiteFooter() {
               </span>
             </div>
             <p className="text-[14px] text-slate mt-4 leading-relaxed">
-              {COMPANY.tagline} Family-run and rooted in San Antonio since{" "}
-              {COMPANY.foundedYear}.
+              {COMPANY.tagline} Family-run and rooted in San Antonio.
             </p>
           </div>
 
@@ -103,7 +102,7 @@ export default function SiteFooter() {
         {/* Bottom bar */}
         <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div className="mono text-[11px] text-slate">
-            © {year} {COMPANY.name} · San Antonio, TX · Licensed &amp; Insured
+            © {year} {COMPANY.legalName} · San Antonio, TX
           </div>
           <div className="mono text-[11px] text-slate">
             Lawn · Landscape · Hardscape · Irrigation

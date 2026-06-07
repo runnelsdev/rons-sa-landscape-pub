@@ -2,18 +2,19 @@
 // Keeps services, contact details, and stats consistent across the site.
 
 export const COMPANY = {
-  name: "Ron's Landscape",
+  name: "Ron's S A Landscape",
+  legalName: "Ron's S A Landscape LLC",
   tagline: "Landscaping & lawn care, done right.",
-  foundedYear: 2012,
 };
 
 export const CONTACT = {
-  phone: "(210) 555-0199",
-  phoneHref: "tel:+12105550199",
-  email: "hello@ronslandscape.com",
-  emailHref: "mailto:hello@ronslandscape.com",
+  phone: "(210) 668-4924",
+  phoneHref: "tel:+12106684924",
+  email: "ron@ronssalandscape.com",
+  emailHref: "mailto:ron@ronssalandscape.com",
   city: "San Antonio, TX",
-  hours: "Mon–Sat · 7am–6pm",
+  // NOTE: hours not published on ronssalandscape.com — placeholder, confirm with Ron.
+  hours: "Mon–Sat, by appointment",
 };
 
 export const SERVICE_AREA = [
@@ -122,9 +123,11 @@ export const SERVICES: Service[] = [
   },
 ];
 
+// Non-numeric, verifiable claims only — no fabricated counts. Swap in real
+// figures (years in business, properties served, etc.) once confirmed with Ron.
 export const STATS = [
-  { value: "12+", label: "Years in San Antonio" },
-  { value: "200+", label: "Properties on route" },
-  { value: "6 days", label: "Weekly route coverage" },
-  { value: "100%", label: "Licensed & insured" },
+  { value: "Local", label: "Family-run, San Antonio" },
+  { value: "Free", label: "On-site estimates" },
+  { value: "Full-service", label: "Lawn → hardscape" },
+  { value: "6-day", label: "Weekly service" },
 ];

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SERVICES, CONTACT } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Services — Ron's Landscape | San Antonio Lawn, Landscape & Hardscape",
+  title: "Services — Ron's S A Landscape | San Antonio Lawn, Landscape & Hardscape",
   description:
     "Lawn maintenance, landscape installation, hardscape, irrigation, seasonal cleanups, and mulch & rock — for San Antonio homes and properties.",
 };

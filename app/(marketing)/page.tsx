@@ -33,7 +33,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
               <div className="label mb-4">
-                San Antonio, TX · Since {COMPANY.foundedYear}
+                San Antonio, TX · Family-Run
               </div>
               <h1 className="display text-[44px] sm:text-[60px] lg:text-[68px] leading-[0.95] text-ink">
                 Lawns and landscapes that look{" "}
