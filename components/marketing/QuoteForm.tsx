@@ -35,7 +35,7 @@ export default function QuoteForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-white border border-ink/10 p-8 shadow-[0_36px_70px_-44px_rgba(26,26,23,0.5)]">
+      <div className="rounded-lg bg-white border border-ink/15 p-8">
         <div className="w-12 h-12 rounded-full bg-moss/10 text-moss flex items-center justify-center text-xl">
           ✓
         </div>
@@ -73,7 +73,7 @@ export default function QuoteForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl bg-white border border-ink/10 p-7 lg:p-8 shadow-[0_36px_70px_-44px_rgba(26,26,23,0.5)] space-y-5"
+      className="rounded-lg bg-white border border-ink/15 p-7 lg:p-8 space-y-5"
     >
       <div className="grid sm:grid-cols-2 gap-5">
         <Field label="Name" required>

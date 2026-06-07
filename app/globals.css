@@ -217,7 +217,7 @@ body {
   color: #7A8B5C;
 }
 
-/* Buttons — refined pills, no hard "stamp" shadow */
+/* Buttons — minimal, flat (work on a light background) */
 .lux-btn,
 .lux-btn-outline,
 .lux-btn-light,
@@ -226,44 +226,34 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.9rem 1.7rem;
-  border-radius: 999px;
+  padding: 0.7rem 1.3rem;
+  border-radius: 6px;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.01em;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
-.lux-btn { background: #2F4A2A; color: #F5F1E8; border-color: #2F4A2A; }
-.lux-btn:hover {
-  background: #233619;
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px -16px rgba(26, 26, 23, 0.7);
-}
-.lux-btn-outline { background: transparent; color: #1A1A17; border-color: rgba(26, 26, 23, 0.28); }
-.lux-btn-outline:hover { border-color: #1A1A17; background: rgba(26, 26, 23, 0.04); }
-.lux-btn-light { background: #F5F1E8; color: #1A1A17; border-color: #F5F1E8; }
-.lux-btn-light:hover { background: #fff; transform: translateY(-1px); }
-.lux-btn-ghost { background: transparent; color: #F5F1E8; border-color: rgba(245, 241, 232, 0.5); }
-.lux-btn-ghost:hover { background: rgba(245, 241, 232, 0.12); border-color: #F5F1E8; }
+.lux-btn,
+.lux-btn-light { background: #2F4A2A; color: #fff; border-color: #2F4A2A; }
+.lux-btn:hover,
+.lux-btn-light:hover { background: #233619; }
+.lux-btn-outline,
+.lux-btn-ghost { background: transparent; color: #1A1A17; border-color: rgba(26, 26, 23, 0.3); }
+.lux-btn-outline:hover,
+.lux-btn-ghost:hover { border-color: #1A1A17; }
 
-/* Scroll-reveal (toggled by the Reveal component) */
-.reveal {
-  opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.8s cubic-bezier(0.16, 0.84, 0.44, 1),
-    transform 0.8s cubic-bezier(0.16, 0.84, 0.44, 1);
-}
-.reveal.is-visible { opacity: 1; transform: none; }
+/* Motion disabled for the minimal style (Reveal + image zoom are no-ops) */
+.reveal,
+.reveal.is-visible { opacity: 1; transform: none; transition: none; }
+.img-zoom,
+.group:hover .img-zoom { transform: none; transition: none; }
 
-/* Slow image zoom on hover (pair with a .group parent) */
-.img-zoom { transition: transform 0.9s cubic-bezier(0.16, 0.84, 0.44, 1); }
-.group:hover .img-zoom { transform: scale(1.05); }
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .img-zoom, .group:hover .img-zoom { transition: none; transform: none; }
+/* Minimal marketing: one sans typeface — override the serif display headings
+   (the /dashboard OS keeps its serif since it isn't wrapped in .marketing) */
+.marketing .display {
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
