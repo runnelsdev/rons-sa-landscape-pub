@@ -32,30 +32,16 @@ export default function WorkPage() {
       <section className="mx-auto max-w-7xl px-5 lg:px-10 pb-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {GALLERY.map((g, i) => (
-            <Reveal
-              key={g.title}
-              delay={(i % 3) * 90}
-              className={i % 5 === 0 ? "sm:col-span-2 lg:col-span-2" : ""}
-            >
-              <figure className="group relative rounded-2xl overflow-hidden h-full">
-                <div
-                  className={`relative ${
-                    i % 5 === 0 ? "aspect-[16/10]" : "aspect-[4/5]"
-                  }`}
-                >
-                  <Image
-                    src={g.image}
-                    alt={g.title}
-                    fill
-                    sizes={
-                      i % 5 === 0
-                        ? "(max-width: 1024px) 100vw, 66vw"
-                        : "(max-width: 1024px) 100vw, 33vw"
-                    }
-                    className="object-cover img-zoom"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
-                </div>
+            <Reveal key={g.title} delay={(i % 3) * 90}>
+              <figure className="group relative aspect-[4/5] rounded-2xl overflow-hidden">
+                <Image
+                  src={g.image}
+                  alt={g.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover img-zoom"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
                 <figcaption className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="text-[11px] uppercase tracking-[0.18em] text-bone/75">
                     {g.category} · {g.area}
