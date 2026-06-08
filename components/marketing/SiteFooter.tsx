@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { COMPANY, CONTACT, SERVICE_AREA } from "@/lib/site";
 
@@ -8,8 +9,14 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 lg:px-8 py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="display text-[18px]">{COMPANY.name}</div>
-            <p className="text-[14px] text-ink/60 mt-3 leading-relaxed">
+            <Image
+              src="/brand/logo.png"
+              alt={COMPANY.legalName}
+              width={385}
+              height={275}
+              className="h-14 w-auto"
+            />
+            <p className="text-[14px] text-ink/60 mt-4 leading-relaxed">
               {COMPANY.tagline}
             </p>
           </div>
