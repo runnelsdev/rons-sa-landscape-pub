@@ -21,15 +21,22 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 bg-white border-b border-ink/10">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
-          <Link href="/" className="flex items-center" aria-label={COMPANY.legalName}>
+          <Link
+            href="/"
+            className="flex items-center gap-2.5"
+            aria-label={COMPANY.legalName}
+          >
             <Image
-              src="/brand/logo.png"
-              alt={COMPANY.legalName}
-              width={385}
-              height={275}
+              src="/brand/mark.png"
+              alt=""
+              width={285}
+              height={199}
               priority
-              className="h-11 w-auto"
+              className="h-9 w-auto"
             />
+            <span className="display text-[18px] tracking-tight leading-none whitespace-nowrap">
+              {COMPANY.name}
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

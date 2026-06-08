@@ -9,13 +9,18 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 lg:px-8 py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Image
-              src="/brand/logo.png"
-              alt={COMPANY.legalName}
-              width={385}
-              height={275}
-              className="h-14 w-auto"
-            />
+            <div className="flex items-center gap-2.5">
+              <Image
+                src="/brand/mark.png"
+                alt=""
+                width={285}
+                height={199}
+                className="h-9 w-auto"
+              />
+              <span className="display text-[18px] tracking-tight leading-none">
+                {COMPANY.name}
+              </span>
+            </div>
             <p className="text-[14px] text-ink/60 mt-4 leading-relaxed">
               {COMPANY.tagline}
             </p>
