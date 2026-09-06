@@ -1,3 +1,4 @@
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -22,7 +23,8 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         />
       </head>
-      <body>{children}</body>
+      <body>{children}<VercelAnalytics />
+      </body>
     </html>
   );
 }
